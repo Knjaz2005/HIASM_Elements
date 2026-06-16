@@ -1,0 +1,152 @@
+Make(delphi)
+ver(4.05 build 186)
+Add(MainForm,2953706,21,105)
+{
+ Width=566
+ Height=346
+ Position=4
+}
+Add(FPCWebBrowser,11421626,301,119)
+{
+ Top=38
+ Width=550
+ Height=269
+ Align=5
+ Antialiased=4
+ URL=""
+ LoaderDLL="WebView2Loader.dll"
+ Silent=0
+ DevTools=1
+ Theme=1
+ link(onNavigate,13812996:In,[(362,125)(362,97)])
+ link(onStatus,4295436:doEvent,[])
+ link(onError,9119342:doEvent,[])
+ link(URL,6844887:Var1,[(307,97)(202,97)])
+ link(Text,15912626:Text,[])
+ link(Theme,7260558:Var3,[(328,107)(284,107)(284,275)])
+}
+Add(DoData,1096429,466,133)
+{
+}
+Add(HubEx,16152143,427,133)
+{
+ link(onEvent,1096429:doData,[])
+}
+Add(Debug,9119342,371,154)
+{
+ WEName="err"
+ VDName=""
+ LogCount=999
+ link(onEvent,16152143:doWork3,[(431,160)])
+}
+Add(Debug,4295436,371,133)
+{
+ WEName="stat"
+ VDName=""
+ LogCount=999
+ link(onEvent,16152143:doWork2,[(395,139)(395,139)])
+}
+Add(ChildPanel,6844887,196,28)
+{
+ link(onEvent1,11255457:doEvent,[(254,34)(254,100)(198,100)(198,125)])
+}
+BEGIN_SDK
+  Add(EditMulti,11270845,21,21)
+  {
+   EventCount=1
+   WorkCount=1
+   VarCount=1
+   link(doWork1,810048:doText2,[(91,27)(91,48)])
+   link(Var1,810048:Text,[(27,197)(160,197)])
+  }
+  Add(Panel,3732425,56,105)
+  {
+   Width=550
+   Height=38
+   Align=2
+   WinStyle=1
+   BorderWidth=0
+   BevelWidth=0
+   BevelInner=0
+  }
+  Add(ToolBar,1363921,217,105)
+  {
+   Top=20
+   Width=590
+   Align=4
+   WinStyle=1
+   Caption=0
+   Buttons=['Navigate'=[],'Stop'=[],'Back'=[],'Refresh'=[],'Forward'=[],'ReadText'=[],'Theme'=[]]
+   link(onClick,11270845:onEvent1,[(285,111)(285,27)])
+  }
+  Add(Edit,810048,154,35)
+  {
+   Width=590
+   Height=18
+   Align=2
+   Text="https://ya.ru/?npr=1"
+  }
+END_SDK
+Add(LineBreak,4447982,140,28)
+{
+ link(Out,6844887:doWork1,[])
+ Primary=[13812996,245,63]
+}
+Add(IndexToChanel,11255457,210,119)
+{
+ Count=7
+ link(onEvent1,11421626:doNavigate,[])
+ link(onEvent2,11421626:doStop,[(272,132)(272,181)])
+ link(onEvent3,11421626:doBack,[])
+ link(onEvent4,11421626:doRefresh,[(272,146)(272,132)])
+ link(onEvent5,11421626:doForward,[(272,153)(272,146)])
+ link(onEvent6,11421626:doFromText,[(272,160)(272,153)])
+ link(onEvent7,9373170:doCalc,[(254,167)(254,205)(65,205)(65,244)])
+}
+Add(StrList,15912626,308,42)
+{
+ Strings=#15:<!DOCTYPE html>|16:<html lang="en">|6:<head>|26:    <meta charset="UTF-8">|74:    <meta name="viewport" content="width=device-width, initial-scale=1.0">|63:    <title>hf-jobs - Run Workloads on Hugging Face Jobs</title>|11:    <style>|11:        * {|22:            margin: 0;|23:            padding: 0;|35:            box-sizing: border-box;|9:        }|8:        |14:        body {|116:            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;|29:            line-height: 1.6;|24:            color: #333;|32:            background: #f5f5f5;|26:            padding: 20px;|9:        }|8:        |20:        .container {|30:            max-width: 1200px;|27:            margin: 0 auto;|30:            background: white;|26:            padding: 40px;|31:            border-radius: 8px;|50:            box-shadow: 0 2px 4px rgba(0,0,0,0.1);|9:        }|8:        |12:        h1 {|27:            color: #ffd21e;|29:            background: #000;|26:            padding: 20px;|43:            margin: -40px -40px 30px -40px;|39:            border-radius: 8px 8px 0 0;|9:        }|8:        |12:        h2 {|27:            color: #1e1e1e;|29:            margin-top: 30px;|32:            margin-bottom: 15px;|33:            padding-bottom: 10px;|45:            border-bottom: 2px solid #ffd21e;|9:        }|8:        |12:        h3 {|24:            color: #555;|29:            margin-top: 20px;|32:            margin-bottom: 10px;|9:        }|8:        |22:        .description {|32:            background: #f9f9f9;|26:            padding: 20px;|43:            border-left: 4px solid #ffd21e;|32:            margin-bottom: 30px;|31:            border-radius: 4px;|9:        }|8:        |20:        .file-list {|29:            list-style: none;|23:            padding: 0;|9:        }|8:        |23:        .file-list li {|26:            padding: 12px;|26:            margin: 8px 0;|32:            background: #f9f9f9;|31:            border-radius: 4px;|43:            border-left: 3px solid #ffd21e;|40:            transition: background 0.2s;|9:        }|8:        |29:        .file-list li:hover {|32:            background: #f0f0f0;|9:        }|8:        |22:        .file-list a {|27:            color: #0066cc;|34:            text-decoration: none;|29:            font-weight: 500;|27:            display: block;|9:        }|8:        |28:        .file-list a:hover {|39:            text-decoration: underline;|9:        }|8:        |20:        .file-path {|24:            color: #666;|29:            font-size: 0.9em;|60:            font-family: 'Monaco', 'Courier New', monospace;|28:            margin-top: 4px;|9:        }|8:        |27:        .file-description {|24:            color: #777;|29:            font-size: 0.9em;|28:            margin-top: 4px;|31:            font-style: italic;|9:        }|8:        |19:        .metadata {|32:            background: #f0f0f0;|26:            padding: 15px;|31:            border-radius: 4px;|32:            margin-bottom: 30px;|9:        }|8:        |21:        .metadata p {|26:            margin: 5px 0;|9:        }|8:        |26:        .metadata strong {|24:            color: #333;|9:        }|8:        |18:        .section {|32:            margin-bottom: 40px;|9:        }|8:        |14:        code {|32:            background: #f4f4f4;|29:            padding: 2px 6px;|31:            border-radius: 3px;|60:            font-family: 'Monaco', 'Courier New', monospace;|29:            font-size: 0.9em;|9:        }|12:    </style>|7:</head>|6:<body>|27:    <div class="container">|38:        <h1>Agent Skill : hf-jobs</h1>|8:        |33:        <div class="description">|74:            <p><strong>Run any workload on Hugging Face Jobs.</strong></p>|235:            <p>Use this skill when you want to run GPU/CPU workloads (batch inference, synthetic data generation, dataset stats, experiments) on Hugging Face Jobs, with correct token handling and result persistence back to the Hub.</p>|14:        </div>|8:        |30:        <div class="metadata">|55:            <p><strong>Skill Name:</strong> hf-jobs</p>|97:            <p><strong>Main Documentation:</strong> <a href="jobs/SKILL.md">jobs/SKILL.md</a></p>|81:            <p><strong>Scripts Directory:</strong> <code>jobs/scripts/</code></p>|87:            <p><strong>References Directory:</strong> <code>jobs/references/</code></p>|14:        </div>|8:        |29:        <div class="section">|29:            <h2>Overview</h2>|248:            <p>This skill focuses on running real workloads via Hugging Face Jobs. It includes ready-to-run UV scripts and guides for authentication (HF tokens), secrets vs env vars, timeouts, hardware selection, and pushing results to the Hub.</p>|14:        </div>|0:|29:        <div class="section">|39:            <h2>Core Documentation</h2>|34:            <ul class="file-list">|20:                <li>|56:                    <a href="jobs/SKILL.md">SKILL.md</a>|62:                    <div class="file-path">jobs/SKILL.md</div>|180:                    <div class="file-description">Complete skill documentation (how to submit jobs, tokens/secrets, timeouts, persistence, and how to use the bundled scripts)</div>|21:                </li>|17:            </ul>|14:        </div>|0:|29:        <div class="section">|31:            <h2>References</h2>|34:            <ul class="file-list">|20:                <li>|79:                    <a href="jobs/references/token_usage.md">token_usage.md</a>|79:                    <div class="file-path">jobs/references/token_usage.md</div>|151:                    <div class="file-description">Token best practices: secrets vs env, permissions, common errors (401/403), and secure patterns</div>|21:                </li>|20:                <li>|77:                    <a href="jobs/references/hub_saving.md">hub_saving.md</a>|78:                    <div class="file-path">jobs/references/hub_saving.md</div>|144:                    <div class="file-description">How to persist results: push datasets/models/files to the Hub (ephemeral job filesystem)</div>|21:                </li>|20:                <li>|85:                    <a href="jobs/references/hardware_guide.md">hardware_guide.md</a>|82:                    <div class="file-path">jobs/references/hardware_guide.md</div>|107:                    <div class="file-description">Flavor selection guidance for CPU/GPU/TPU workloads</div>|21:                </li>|20:                <li>|87:                    <a href="jobs/references/troubleshooting.md">troubleshooting.md</a>|83:                    <div class="file-path">jobs/references/troubleshooting.md</div>|122:                    <div class="file-description">Common failure modes (timeouts, missing deps, OOM, auth) and fixes</div>|21:                </li>|17:            </ul>|14:        </div>|0:|29:        <div class="section">|28:            <h2>Scripts</h2>|34:            <ul class="file-list">|20:                <li>|90:                    <a href="jobs/scripts/generate-responses.py">generate-responses.py</a>|83:                    <div class="file-path">jobs/scripts/generate-responses.py</div>|163:                    <div class="file-description">vLLM batch generation: load prompts/messages from a dataset, generate responses, push dataset + card to Hub</div>|21:                </li>|20:                <li>|88:                    <a href="jobs/scripts/cot-self-instruct.py">cot-self-instruct.py</a>|82:                    <div class="file-path">jobs/scripts/cot-self-instruct.py</div>|167:                    <div class="file-description">CoT Self-Instruct synthetic data generation (reasoning/instruction) + optional filtering, pushes dataset + card</div>|21:                </li>|20:                <li>|82:                    <a href="jobs/scripts/finepdfs-stats.py">finepdfs-stats.py</a>|79:                    <div class="file-path">jobs/scripts/finepdfs-stats.py</div>|163:                    <div class="file-description">Polars streaming stats over Hub parquet (finepdfs-edu); optional upload of computed stats to a dataset repo</div>|21:                </li>|17:            </ul>|14:        </div>|10:    </div>|7:</body>|7:</html>|0:|0:|0:|0:|
+}
+Add(Memory,1462400,245,238)
+{
+ Default=Integer(1)
+ link(onData,4696552:doData,[])
+}
+Add(MathParse,9373170,70,238)
+{
+ DataCount=1
+ MathStr="%1 +1"
+ ResultType=0
+ link(onResult,12504250:doCompare,[])
+ link(X1,5085805:Var,[])
+}
+Add(LineBreak,15944726,224,294)
+{
+ Type=1
+ link(Data,7260558:Var1,[(230,275)])
+ Primary=[5085805,-154,-84]
+}
+Add(If_else,12504250,112,238)
+{
+ Type=3
+ Op2=Integer(2)
+ link(onTrue,2789284:doWork2,[])
+ link(onFalse,756911:doData,[(152,251)(152,258)])
+}
+Add(GetDataEx,7260558,245,270)
+{
+ link(Data,1462400:Value,[])
+}
+Add(DoData,4696552,294,238)
+{
+ link(onEventData,11421626:doTheme,[(338,244)(338,212)(289,212)(289,181)])
+}
+Add(DoData,756911,175,252)
+{
+ Data=Integer(0)
+ link(onEventData,2789284:doWork3,[(228,258)])
+}
+Add(HubEx,2789284,224,238)
+{
+ link(onEvent,1462400:doValue,[])
+}

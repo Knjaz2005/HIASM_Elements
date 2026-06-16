@@ -1,0 +1,29 @@
+# Уведомления о сторонних компонентах XMLNativeAOTEditor / XMLNativeAOTEditor.dll
+
+Этот файл является русским кратким описанием файла `THIRD-PARTY-NOTICES.txt`.
+
+При расхождениях между этим файлом и `THIRD-PARTY-NOTICES.txt` используется английский файл `THIRD-PARTY-NOTICES.txt` и оригинальные тексты лицензий сторонних компонентов.
+
+## Сторонние компоненты
+
+| Компонент | Версия | Лицензия / notices | Источник / пакет |
+| --- | --- | --- | --- |
+| Microsoft .NET Runtime / NativeAOT components | runtime packs `10.0.8` | MIT и дополнительные third-party notices | https://github.com/dotnet/dotnet |
+
+## Проверенные локальные метаданные
+
+Сведения взяты из локальных NuGet-пакетов:
+
+- `Microsoft.NETCore.App.Runtime.NativeAOT.win-x64` версии `10.0.8`;
+- `Microsoft.NETCore.App.Runtime.NativeAOT.win-x86` версии `10.0.8`.
+
+В metadata пакета указан repository `https://github.com/dotnet/dotnet`, commit `94ea82652cdd4e0f8046b5bd5becbd11461482ca`, license expression `MIT`.
+
+## Содержание английского файла
+
+`THIRD-PARTY-NOTICES.txt` содержит:
+
+- список сторонних компонентов, относящихся к включенным NativeAOT DLL;
+- сведения о версии runtime packs и repository metadata;
+- текст `LICENSE.TXT` из пакета `Microsoft.NETCore.App.Runtime.NativeAOT.win-x64` версии `10.0.8`;
+- `THIRD-PARTY-NOTICES.TXT` из пакета `Microsoft.NETCore.App.Runtime.NativeAOT.win-x64` версии `10.0.8`.

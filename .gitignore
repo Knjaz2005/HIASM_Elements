@@ -1,0 +1,9 @@
+*.exe
+/FPCBrowser/Browser64.exe.WebView2
+AGENTS.md
+FPCBrowser/tests.md
+NativeAOTMail/tests.md
+XMLNativeAOTEditor/tests.md
+*tests.md
+originalsMD5.txt
+.originalsMD5.txt

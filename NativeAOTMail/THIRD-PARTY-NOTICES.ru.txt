@@ -1,0 +1,24 @@
+# Уведомления о сторонних компонентах NativeAOTMail / HiMailNative.dll
+
+Этот файл является русским кратким описанием файла `THIRD-PARTY-NOTICES.txt`.
+
+При расхождениях между этим файлом и `THIRD-PARTY-NOTICES.txt` используется английский файл `THIRD-PARTY-NOTICES.txt` и оригинальные тексты лицензий сторонних компонентов.
+
+## Сторонние компоненты
+
+| Компонент | Версия | Лицензия | Источник / пакет |
+| --- | --- | --- | --- |
+| MailKit | 4.17.0 | MIT | https://github.com/jstedfast/MailKit |
+| MimeKit | 4.17.0 | MIT | https://github.com/jstedfast/MimeKit |
+| BouncyCastle.Cryptography | 2.6.2 | MIT | https://github.com/bcgit/bc-csharp |
+| System.Security.Cryptography.Pkcs | 10.0.0 | MIT | https://github.com/dotnet/dotnet |
+| Microsoft .NET Runtime / NativeAOT components | runtime packs 10.0.8 | MIT и дополнительные third-party notices | https://github.com/dotnet/dotnet |
+
+## Содержание английского файла
+
+`THIRD-PARTY-NOTICES.txt` содержит:
+
+- список сторонних компонентов;
+- сведения о версиях, авторах, copyright и repository metadata;
+- тексты MIT license notices для MailKit, MimeKit, BouncyCastle.Cryptography, System.Security.Cryptography.Pkcs и .NET Runtime / NativeAOT components;
+- third-party notices из Microsoft .NET Runtime NativeAOT runtime package.

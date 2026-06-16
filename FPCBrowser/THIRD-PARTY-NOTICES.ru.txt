@@ -1,0 +1,35 @@
+# Уведомления о сторонних компонентах FPCBrowser / FPCWebBrowser
+
+Этот файл является русским кратким описанием файла `THIRD-PARTY-NOTICES.txt`.
+
+При расхождениях между этим файлом и `THIRD-PARTY-NOTICES.txt` используется английский файл `THIRD-PARTY-NOTICES.txt` и оригинальные тексты лицензий сторонних компонентов.
+
+## Сторонние компоненты
+
+| Компонент | Версия | Лицензия | Источник / пакет |
+| --- | --- | --- | --- |
+| Microsoft.Web.WebView2 SDK / WebView2Loader.dll | 1.0.4022.49 | BSD-style Microsoft license | https://www.nuget.org/packages/Microsoft.Web.WebView2/1.0.4022.49 |
+| Microsoft Edge WebView2 Runtime | Evergreen или Fixed Version на целевой машине | Условия Microsoft Edge WebView2 Runtime | https://developer.microsoft.com/microsoft-edge/webview2 |
+
+## Что включено в каталог
+
+В каталог `FPCBrowser` включены только `WebView2Loader.dll` для x32 и x64. Это небольшой загрузчик, который находит установленный WebView2 Runtime и создает WebView2 environment.
+
+Локально проверенные метаданные включенных файлов:
+
+| Файл | File/Product version | Размер | SHA-256 |
+| --- | --- | ---: | --- |
+| `win-x32/WebView2Loader.dll` | `1.0.4022.49` | 124296 байт | `9DDE881D0CB0685053DA9F2EBF7A27737882682D2F907D42AF1C029DC603A0DC` |
+| `win-x64/WebView2Loader.dll` | `1.0.4022.49` | 163208 байт | `12F7708910E1AAC5CC9AC43603D122F1D2E770AE2651830A07EF8B3117F28C55` |
+
+Сам WebView2 Runtime в каталог не включен. Распространение Evergreen installer/bootstrapper или Fixed Version Runtime находится за пределами этого пакета и регулируется соответствующими условиями и уведомлениями Microsoft Edge WebView2 Runtime.
+
+## Содержание английского файла
+
+`THIRD-PARTY-NOTICES.txt` содержит:
+
+- список сторонних компонентов;
+- сведения о версии `Microsoft.Web.WebView2` и включенных `WebView2Loader.dll`;
+- локально проверенные размеры, версии и SHA-256 включенных `WebView2Loader.dll`;
+- текст лицензии NuGet-пакета `Microsoft.Web.WebView2` для `WebView2Loader.dll`;
+- пояснение, что WebView2 Runtime является внешним требованием и не включен в этот каталог.

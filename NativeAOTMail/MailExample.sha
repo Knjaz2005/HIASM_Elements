@@ -1,0 +1,267 @@
+Make(delphi)
+ver(4.05 build 186)
+Add(MainForm,2953706,21,112)
+{
+ link(onCreate,8891213:doResize,[(72,132)(72,265)])
+}
+Add(MailSession,10096015,532,224)
+{
+ SmtpPort=465
+ MailServer="imap.example.com"
+ Security=2
+ AuthMechanism=2
+ Login="user@example.com"
+ Password="app-password"
+ link(onOpen,3054082:doWork1,[(662,230)])
+ link(onError,3054082:doWork2,[])
+}
+Add(MailSend,4020463,448,371)
+{
+ From="user@example.com"
+ To="user@example.com"
+ link(onSend,8433200:doWork2,[])
+ link(onError,8433200:doWork3,[(557,384)])
+ link(Attachments,5009765:Var1,[(503,355)(342,355)])
+}
+Add(HubEx,5882048,658,259)
+{
+ link(onEvent,12374950:doAdd,[])
+}
+Add(HubEx,8433200,553,371)
+{
+ link(onEvent,6212738:doWork2,[])
+}
+Add(Memo,12374950,749,259)
+{
+ Left=635
+ Top=280
+ Align=5
+ ScrollBars=3
+}
+Add(MailDelete,14679901,322,546)
+{
+ Folder="inbox"
+ link(onDelete,2829196:doWork2,[])
+ link(onError,2829196:doWork3,[(372,559)(372,572)(389,572)])
+ link(Handle,13413213:Var2,[])
+ link(Index,10630343:Var2,[(342,425)(314,425)])
+}
+Add(MailRead,8736860,371,441)
+{
+ Folder="inbox"
+ link(onRead,6212498:doData,[(541,447)(541,419)])
+ link(onError,13268689:doWork1,[(599,454)])
+ link(Handle,2453211:Var2,[])
+ link(Index,10630343:Var3,[(391,306)])
+}
+Add(ChildPanelEx,8891213,182,259)
+{
+ link(conn,16576855:doEvent1,[])
+ link(send,8292114:doEvent1,[(261,272)(261,314)])
+ link(read,8816392:doEvent1,[(244,279)(244,447)])
+ link(onClick,12770827:doEvent1,[(268,286)(268,545)])
+ link(list,15537437:doEvent1,[(221,293)(221,664)])
+}
+BEGIN_SDK
+  Add(EditMultiEx,7087932,21,21)
+  {
+   WorkCount=#8:doResize|
+   EventCount=#4:conn|4:send|4:read|7:onClick|4:list|
+   Width=440
+   Height=312
+   link(doResize,10112958:doResize,[(53,27)(53,41)])
+  }
+  Add(Panel,8230289,35,105)
+  {
+   Left=35
+   Top=105
+   Align=2
+   Point(onShow)
+  }
+  Add(Button,3462036,119,63)
+  {
+   Left=75
+   Top=160
+   Layout="12"
+   Caption="conn"
+   link(onClick,7087932:conn,[(313,69)(313,27)])
+  }
+  Add(Button,12545016,119,133)
+  {
+   Left=75
+   Top=160
+   Layout="12"
+   Caption="send"
+   link(onClick,7087932:send,[(306,139)(306,34)])
+  }
+  Add(Button,10161759,119,196)
+  {
+   Left=75
+   Top=160
+   Layout="12"
+   Caption="read"
+   link(onClick,7087932:read,[(306,202)(306,41)])
+  }
+  Add(Button,9199023,119,245)
+  {
+   Left=115
+   Top=255
+   Layout="12"
+   Caption="del"
+   link(onClick,7087932:onClick,[(306,251)(306,48)])
+  }
+  Add(Button,10524782,119,287)
+  {
+   Left=115
+   Top=255
+   Layout="12"
+   Caption="list"
+   link(onClick,7087932:list,[(306,293)(306,55)])
+  }
+  Add(HBoxLayout,10112958,84,35)
+  {
+   Name="12"
+  }
+END_SDK
+Add(HubEx,3054082,658,238)
+{
+ Angle=1
+ link(onEvent,5882048:doWork1,[])
+}
+Add(GetDataEx,2453211,371,413)
+{
+ link(Data,10096015:Handle,[(377,313)(538,313)])
+}
+Add(MailList,12237704,273,665)
+{
+ Folder="inbox"
+ Limit=50
+ link(onList,9359087:doWork2,[(328,671)(328,648)])
+ link(onError,9359087:doWork3,[(354,678)])
+ link(Handle,13413213:Var1,[(279,488)])
+}
+Add(HubEx,6212738,658,371)
+{
+ Angle=3
+ link(onEvent,5882048:doWork3,[])
+}
+Add(HubEx,5411526,658,413)
+{
+ Angle=3
+ link(onEvent,6212738:doWork3,[])
+}
+Add(DoData,6212498,567,413)
+{
+ link(onEventData,5411526:doWork2,[])
+ link(Data,8736860:Result,[(573,401)(475,401)(475,485)(377,485)])
+}
+Add(HubEx,13268689,595,539)
+{
+ link(onEvent,5411526:doWork3,[(662,545)])
+}
+Add(GetDataEx,13413213,322,483)
+{
+ link(Data,2453211:Var1,[(328,418)])
+}
+Add(MultiElement,5009765,336,308)
+{
+ link(onEvent1,4020463:doSend,[(408,314)(408,377)])
+}
+BEGIN_SDK
+  Add(EditMulti,13904345,21,21)
+  {
+   EventCount=1
+   WorkCount=1
+   VarCount=1
+   Width=622
+   Height=459
+   link(doWork1,8804008:doEvent1,[(91,27)(91,125)])
+   link(Var1,9998250:Array,[(27,294)(510,294)])
+  }
+  Add(Message,983091,161,140)
+  {
+   Message="����?"
+   Type=2
+   Point(onYES)
+   Point(onNO)
+   link(onYES,12052382:doExecute,[(229,153)(229,55)])
+   link(onNO,6079345:doEvent1,[(363,160)(363,116)])
+  }
+  Add(ODialog,12052382,336,49)
+  {
+   link(onExecute,7806864:doEvent1,[(387,55)(387,34)])
+  }
+  Add(StrList,9998250,490,28)
+  {
+  }
+  Add(Hub,8804008,105,119)
+  {
+   link(onEvent1,9998250:doClear,[(277,125)(277,41)])
+   link(onEvent2,983091:doMessage,[(140,132)(140,146)])
+  }
+  Add(Hub,6079345,534,110)
+  {
+   InCount=2
+   OutCount=1
+   link(onEvent1,13904345:onEvent1,[(596,116)(596,27)])
+  }
+  Add(Hub,7806864,413,28)
+  {
+   link(onEvent1,9998250:doAdd,[])
+   link(onEvent2,10486613:doData,[(434,41)(434,123)])
+  }
+  Add(DoData,10486613,455,119)
+  {
+   link(onEventData,6079345:doEvent2,[])
+  }
+END_SDK
+Add(Edit,3028162,308,105)
+{
+ Left=160
+ Top=125
+ Align=4
+ DataType=2
+}
+Add(GetDataEx,10630343,308,301)
+{
+ link(Data,3028162:Text,[])
+}
+Add(Hub,16576855,329,259)
+{
+ link(onEvent1,7784:doEvent1,[(546,265)(546,272)])
+ link(onEvent2,10096015:doOpen,[(437,272)(437,230)])
+}
+Add(Hub,7784,707,266)
+{
+ InCount=10
+ OutCount=1
+ link(onEvent1,12374950:doClear,[])
+}
+Add(Hub,8292114,294,308)
+{
+ link(onEvent1,7784:doEvent3,[(508,314)(508,286)])
+ link(onEvent2,5009765:doWork1,[(322,321)(322,314)])
+}
+Add(Hub,8816392,294,441)
+{
+ link(onEvent1,7784:doEvent5,[(508,447)(508,300)])
+ link(onEvent2,8736860:doRead,[(340,454)(340,447)])
+}
+Add(Hub,12770827,287,539)
+{
+ link(onEvent1,7784:doEvent7,[(504,545)(504,314)])
+ link(onEvent2,14679901:doDelete,[])
+}
+Add(Hub,15537437,224,658)
+{
+ link(onEvent1,7784:doEvent10,[(472,664)(472,335)])
+ link(onEvent2,12237704:doList,[])
+}
+Add(HubEx,2829196,385,546)
+{
+ link(onEvent,13268689:doWork2,[(475,552)(475,545)])
+}
+Add(HubEx,9359087,350,642)
+{
+ link(onEvent,13268689:doWork3,[(599,648)])
+}

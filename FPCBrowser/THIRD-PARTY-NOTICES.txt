@@ -1,0 +1,72 @@
+# Third-party notices for FPCBrowser / FPCWebBrowser
+
+This file lists third-party components included in or required by the `FPCBrowser` package.
+
+Russian explanatory summary: THIRD-PARTY-NOTICES.ru.txt.
+
+## Included third-party components
+
+| Component | Version | License | Source / package |
+| --- | --- | --- | --- |
+| Microsoft.Web.WebView2 SDK / WebView2Loader.dll | 1.0.4022.49 | BSD-style Microsoft license listed below | https://www.nuget.org/packages/Microsoft.Web.WebView2/1.0.4022.49 |
+
+The following binaries are included in this directory:
+
+```text
+win-x32/WebView2Loader.dll
+win-x64/WebView2Loader.dll
+```
+
+Locally inspected binary metadata:
+
+| File | File/Product version | Size | SHA-256 |
+| --- | --- | ---: | --- |
+| win-x32/WebView2Loader.dll | 1.0.4022.49 | 124296 bytes | 9DDE881D0CB0685053DA9F2EBF7A27737882682D2F907D42AF1C029DC603A0DC |
+| win-x64/WebView2Loader.dll | 1.0.4022.49 | 163208 bytes | 12F7708910E1AAC5CC9AC43603D122F1D2E770AE2651830A07EF8B3117F28C55 |
+
+## External runtime requirement
+
+`FPCWebBrowser` requires Microsoft Edge WebView2 Runtime on the target machine. The Runtime can be the system Evergreen Runtime or a Fixed Version Runtime selected through `BrowserExecutableFolder`.
+
+The WebView2 Runtime itself is not included in this directory. Redistribution of an Evergreen installer/bootstrapper or a Fixed Version Runtime is outside this package and is governed by the applicable Microsoft Edge WebView2 Runtime terms and notices.
+
+Microsoft distribution documentation: https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution
+
+Microsoft WebView2 download page: https://developer.microsoft.com/microsoft-edge/webview2
+
+## Microsoft.Web.WebView2 / WebView2Loader.dll
+
+Package: Microsoft.Web.WebView2 1.0.4022.49
+Included files: WebView2Loader.dll for x86 and x64
+Company: Microsoft Corporation
+File description: Microsoft Edge Embedded Browser WebView Loader
+Copyright: Copyright Microsoft Corporation. All rights reserved.
+NuGet package: https://www.nuget.org/packages/Microsoft.Web.WebView2/1.0.4022.49
+License page: https://www.nuget.org/packages/Microsoft.Web.WebView2/1.0.4022.49/License
+Runtime distribution documentation: https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution
+
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+   * Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+   * Redistributions in binary form must reproduce the above
+copyright notice, this list of conditions and the following disclaimer
+in the documentation and/or other materials provided with the
+distribution.
+   * The name of Microsoft Corporation, or the names of its contributors
+may not be used to endorse or promote products derived from this
+software without specific prior written permission.
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
